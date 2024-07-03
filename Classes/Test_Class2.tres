@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="unit_class" load_steps=2 format=3 uid="uid://bnmacttbjaqle"]
+
+[ext_resource type="Script" path="res://Scripts/unit_class.gd" id="1_k11pg"]
+
+[resource]
+script = ExtResource("1_k11pg")
+moveSpeed = 1
+class_color = Color(0, 1, 0, 1)

@@ -31,9 +31,6 @@ func _ready():
 	$WallLine.add_point(Vector2(pos2.x, pos2.y))
 	
 	spawn_head(Vector2(gw/2,gh/2+16))
-	add_segment()
-	add_segment()
-	add_segment()
 
 
 
@@ -50,10 +47,9 @@ func spawn_head(pos):
 	u.leader=true
 	u.index=0
 	add_child(u)
+	u.prep()
 	snake=u
 
-func add_segment():
-	snake.add_follower()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

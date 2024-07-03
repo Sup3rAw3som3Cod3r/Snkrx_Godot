@@ -13,11 +13,24 @@ var following:segment
 
 var prev_pos=[]
 
-#default class to test class
-var myClass:unit_class = preload("res://Classes/Test_Class.tres")
+#class of the unit, to avoid the massive if list of snkrx
+var myClass:unit_class
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
+
+func prep():
 	position = Vector2(Globals.gw/2,Globals.gh/2 + 16)
+	
+	if Globals.current_snake.size() > index:
+		myClass = Globals.current_snake[index]
+		if Globals.current_snake.size() > index+1:
+			add_follower()
+	
+	#if still not set, set it to be testclass
+	if myClass == null:
+		myClass = load("res://Classes/Test_Class.tres")
 	
 	#import class into the unit
 	$Sprite.modulate = myClass.class_color
@@ -80,10 +93,11 @@ func add_follower():
 		follower.add_follower()
 	else:
 		var seg=Globals.unitObj.instantiate()
-		get_parent().add_child(seg)
+		get_tree().current_scene.add_child(seg)
 		follower=seg
 		seg.index = index+1
 		seg.following = self
+		seg.prep()
 
 #only track for next unit, rather than first unit doing for everyone
 func do_prev():

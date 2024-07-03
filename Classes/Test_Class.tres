@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_0mrpt")
 moveSpeed = 1
-class_color = Color(1.63645e-06, 0.757235, 0.75815, 1)
+class_color = Color(0, 0, 1, 1)
