@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="unit_class" load_steps=2 format=3 uid="uid://tr5babn3g1b6"]
+
+[ext_resource type="Script" path="res://Scripts/unit_class.gd" id="1_0mrpt"]
+
+[resource]
+script = ExtResource("1_0mrpt")
+moveSpeed = 1
+class_color = Color(1.63645e-06, 0.757235, 0.75815, 1)

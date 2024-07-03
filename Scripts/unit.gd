@@ -13,10 +13,15 @@ var following:segment
 
 var prev_pos=[]
 
-var myClass
+#default class to test class
+var myClass:unit_class = preload("res://Classes/Test_Class.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position = Vector2(Globals.gw/2,Globals.gh/2 + 16)
+	
+	#import class into the unit
+	$Sprite.modulate = myClass.class_color
+	
 	do_prev()
 
 
@@ -34,7 +39,9 @@ func move(delta):
 		r += 1.66*PI*delta*mov
 		#move
 		#75
+		#TODO: loop through all units to get average spd
 		var total_v=75 * 1.5
+	
 		velocity = Vector2(total_v*cos(r),total_v*sin(r))
 		rotation = r
 		global_position += velocity * delta
@@ -78,6 +85,7 @@ func add_follower():
 		seg.index = index+1
 		seg.following = self
 
+#only track for next unit, rather than first unit doing for everyone
 func do_prev():
 	prev_pos.append([global_position,global_rotation])
 	if prev_pos.size() > 15:
