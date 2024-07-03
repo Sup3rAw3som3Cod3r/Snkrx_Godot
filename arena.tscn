@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ppm4htn0ppcm"]
+
+[ext_resource type="Script" path="res://arena.gd" id="1_t1he5"]
+
+[node name="Arena" type="Node2D"]
+script = ExtResource("1_t1he5")
+
+[node name="WallL" type="Area2D" parent="." groups=["Walls"]]
+
+[node name="Shape" type="CollisionPolygon2D" parent="WallL"]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="WallT" type="Area2D" parent="." groups=["Walls"]]
+
+[node name="Shape" type="CollisionPolygon2D" parent="WallT"]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="WallR" type="Area2D" parent="." groups=["Walls"]]
+
+[node name="Shape" type="CollisionPolygon2D" parent="WallR"]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="WallB" type="Area2D" parent="." groups=["Walls"]]
+
+[node name="Shape" type="CollisionPolygon2D" parent="WallB"]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="WallLine" type="Line2D" parent="."]
+closed = true
+width = 1.0
